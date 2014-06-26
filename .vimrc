@@ -1,6 +1,10 @@
 " Use the Solarized Dark theme
+syntax enable
 set background=dark
 colorscheme solarized
+
+" Use the degraded 256 colorscheme
+let g:solarized_termcolors=256
 
 " Make Vim more useful
 set nocompatible
