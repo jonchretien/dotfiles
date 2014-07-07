@@ -8,6 +8,7 @@ Homebase for my dev settings.
 
 ```bash
 git clone https://github.com/jonchretien/dotfiles.git && cd dotfiles
+bash bootstrap.sh
 ```
 
 ## Credit
