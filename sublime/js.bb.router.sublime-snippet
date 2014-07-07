@@ -1,0 +1,32 @@
+<snippet>
+  <content><![CDATA[
+var Router = Backbone.Router.extend({
+
+  /* define the route and function maps for this router */
+  routes: {
+
+    '':             'index',              // index page
+    'foo':          'doSomething',        // #foo
+
+    /*
+    This is a default route that also uses a *splat. Consider the
+    default route a wildcard for URLs that are either not matched or where
+    the user has incorrectly typed in a route path manually.
+    Sample usage: http://unicorns.com/#anything
+    */
+    '*other' : 'defaultRoute'
+  },
+
+  index: function() { },
+
+  doSomething: function() { },
+
+  defaultRoute: function(other) { }
+
+});
+
+var router = new Router();
+]]></content>
+  <tabTrigger>router</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

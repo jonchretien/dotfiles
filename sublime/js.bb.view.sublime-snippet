@@ -1,0 +1,27 @@
+<snippet>
+  <content><![CDATA[
+var View = Backbone.View.extend({
+
+  el: '',
+
+  tagName: "li",
+
+  className: "document-row",
+
+  events: {
+    'click .icon':          'open',
+    'click .button.edit':   'openEditDialog',
+    'click .button.delete': 'destroy'
+  },
+
+  initialize: function() { },
+
+  render: function() { }
+
+});
+
+var view = new View();
+]]></content>
+  <tabTrigger>view</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

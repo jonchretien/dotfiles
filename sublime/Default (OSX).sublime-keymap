@@ -1,0 +1,11 @@
+[
+  {
+  	// Code Formatting
+    // The argument allows the command to also work on the entire file in addition to a selection.
+  	"keys": ["command+option+["],
+  	"command": "reindent",
+  	"args": {
+  		"single_line": false
+  	}
+  }
+]

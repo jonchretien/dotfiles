@@ -1,0 +1,13 @@
+<snippet>
+  <content><![CDATA[
+var Model = Backbone.Model.extend({
+
+  defaults: { }
+
+});
+
+var model = new Model();
+]]></content>
+  <tabTrigger>model</tabTrigger>
+  <scope>source.js</scope>
+</snippet>

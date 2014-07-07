@@ -1,0 +1,75 @@
+<snippet>
+  <content><![CDATA[
+/**
+ * @author $1
+ * @overview $2
+ * @requires $3
+ */
+
+function MyClass(options) {
+  this.init(options);
+}
+
+/**
+ * Passes options (if available) and declares variables.
+ *
+ * @param {Object} options - Optional object that overwrites defaults.
+ */
+MyClass.prototype.init = function(options) {
+  this.options = {};
+  this.options = \$.extend(true, MyClass.defaults, options);
+
+  // cache DOM references
+  this.el = document.getElementById(this.options.el);
+
+  this.run();
+};
+
+/**
+ * Default configuration (can be overwritten by optional options object)
+ */
+MyClass.defaults = {
+  el: 'foo'
+};
+
+
+/**
+ * Runs bulk of application behavior.
+ */
+MyClass.prototype.run = function() {
+  this.bindEventHandlers();
+};
+
+
+/**
+ * Binds event handlers.
+ */
+MyClass.prototype.bindEventHandlers = function() {
+  this.el.addEventListener('click', this.doSomething.bind(this), false);
+};
+
+
+/**
+ * Removes event handlers.
+ */
+MyClass.prototype.removeEventHandlers = function() {
+  this.el.removeEventListener('click', this.doSomething.bind(this), false);
+};
+
+
+/**
+ * App functionality.
+ */
+MyClass.prototype.doSomething = function(event) {
+  event.preventDefault();
+  this.removeEventHandlers();
+};
+
+// Instantiate new object
+var myClass = new MyClass();
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>class</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>
