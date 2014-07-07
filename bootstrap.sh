@@ -32,3 +32,15 @@ echo 'Should I give you links for system applications (e.g. Chrome, Dropbox, etc
 echo 'y/n'
 read give_links
 [[ "$give_links" == 'y' ]] && open_apps
+
+install_homebrew() {
+  echo 'Installing Homebrew, MySQL, and Node.js...'
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  brew update
+  brew install mysql node
+}
+
+echo 'Should I install Homebrew, MySQL, and Node.js?'
+echo 'y/n'
+read give_homebrew
+[[ "$give_homebrew" == 'y' ]] && install_homebrew
