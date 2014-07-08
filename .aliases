@@ -10,6 +10,7 @@ alias dl="cd ~/Downloads"
 alias st='cd ~/Sites'
 alias h="history"
 alias cl='clear'
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
