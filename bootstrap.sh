@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-open_apps() {
-  echo 'Opening app links:'
+open_tabs() {
+  echo 'Opening links to apps:'
   echo '>> Chrome'
   open https://www.google.com/intl/en/chrome/browser/
   echo '>> Chrome Canary'
@@ -16,6 +16,8 @@ open_apps() {
   open http://git-scm.com/downloads
   echo '>> Grunt'
   open http://gruntjs.com/getting-started
+  echo '>> iTerm2'
+  open http://www.iterm2.com/
   echo '>> LimeChat'
   open http://limechat.net/mac/
   echo '>> Sequel Pro'
@@ -28,11 +30,6 @@ open_apps() {
   open http://panic.com/transmit/
 }
 
-echo 'Should I give you links for system applications (e.g. Chrome, Dropbox, etc...)?'
-echo 'y/n'
-read give_links
-[[ "$give_links" == 'y' ]] && open_apps
-
 install_homebrew() {
   echo 'Installing Homebrew, MySQL, and Node.js...'
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -40,7 +37,12 @@ install_homebrew() {
   brew install mysql node
 }
 
+echo 'Should I open tabs for system applications (e.g. Chrome, Dropbox, etc...)?'
+echo 'y/n'
+read answer_links
+[[ "$answer_links" == 'y' ]] && open_tabs
+
 echo 'Should I install Homebrew, MySQL, and Node.js?'
 echo 'y/n'
-read give_homebrew
-[[ "$give_homebrew" == 'y' ]] && install_homebrew
+read answer_homebrew
+[[ "$answer_homebrew" == 'y' ]] && install_homebrew
