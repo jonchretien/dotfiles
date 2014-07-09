@@ -11,6 +11,11 @@ install_npm_modules() {
   npm install -g uglify-js
 }
 
+install_ruby_gems() {
+  echo "Ruby gems"
+  gem install sass
+}
+
 open_tabs() {
   echo 'Opening links to apps:'
   echo '>> Chrome'
@@ -60,3 +65,8 @@ echo 'Should I install global NPM modules?'
 echo 'y/n'
 read prompt_npm
 [[ "$prompt_npm" == 'y' ]] && install_npm_modules
+
+echo 'Should I install Ruby gems?'
+echo 'y/n'
+read prompt_ruby_gems
+[[ "$prompt_ruby_gems" == 'y' ]] && install_ruby_gems
