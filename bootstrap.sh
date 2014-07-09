@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+install_npm_modules() {
+  echo "Installing global npm modules"
+  npm install -g bower
+  npm install -g browserify
+  npm install -g grunt-cli
+  npm install -g gulp
+  npm install -g less
+  npm install -g jshint
+  npm install -g uglify-js
+}
+
 open_tabs() {
   echo 'Opening links to apps:'
   echo '>> Chrome'
@@ -14,8 +25,6 @@ open_tabs() {
   open http://www.mozilla.org/en-US/firefox/new/
   echo '>> Git'
   open http://git-scm.com/downloads
-  echo '>> Grunt'
-  open http://gruntjs.com/getting-started
   echo '>> iTerm2'
   open http://www.iterm2.com/
   echo '>> LimeChat'
@@ -39,10 +48,15 @@ install_homebrew() {
 
 echo 'Should I open tabs for system applications (e.g. Chrome, Dropbox, etc...)?'
 echo 'y/n'
-read answer_links
-[[ "$answer_links" == 'y' ]] && open_tabs
+read prompt_links
+[[ "$prompt_links" == 'y' ]] && open_tabs
 
 echo 'Should I install Homebrew, MySQL, and Node.js?'
 echo 'y/n'
-read answer_homebrew
-[[ "$answer_homebrew" == 'y' ]] && install_homebrew
+read prompt_homebrew
+[[ "$prompt_homebrew" == 'y' ]] && install_homebrew
+
+echo 'Should I install global NPM modules?'
+echo 'y/n'
+read prompt_npm
+[[ "$prompt_npm" == 'y' ]] && install_npm_modules
