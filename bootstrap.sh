@@ -23,9 +23,12 @@ install_dotfiles() {
 
   for file in "${files[@]}"
   do
+     echo "Moving ~/$file to ~/$BACKUP_DIR/$file"
      mv ~/$file ~/$BACKUP_DIR/$file
      ln -s $CURRENT_DIR/$file ~/$file
   done
+
+  echo "Done installing dotfiles!"
 }
 
 install_npm_modules() {
