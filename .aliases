@@ -60,3 +60,6 @@ alias mystop="mysql.server stop"
 # PSQL
 alias psql='/Applications/Postgres.app/Contents/Versions/9.3/bin/psql';
 alias pg_dump='/Applications/Postgres.app/Contents/Versions/9.3/bin/pg_dump';
+
+# HTTP Server
+alias server='python -m SimpleHTTPServer';
