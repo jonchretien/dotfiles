@@ -63,3 +63,7 @@ alias pg_dump='/Applications/Postgres.app/Contents/Versions/9.3/bin/pg_dump';
 
 # HTTP Server
 alias server='python -m SimpleHTTPServer';
+
+# VirtualBox
+alias vboxstart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart';
+alias vboxstop='sudo /Library/StartupItems/VirtualBox/VirtualBox stop';
