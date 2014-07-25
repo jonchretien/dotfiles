@@ -2,3 +2,4 @@
 
 # Bash, ~/.bashrc
 eval "$(grunt --completion=bash)"
+eval `docker-osx env`
