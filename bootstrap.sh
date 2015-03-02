@@ -76,10 +76,10 @@ open_tabs() {
 }
 
 install_homebrew() {
-  echo "Installing Homebrew, MySQL, Node.js, wget."
+  echo "Installing Homebrew, MySQL, Node.js,, ack, wget, & tree."
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   brew update
-  brew install mysql node ack wget
+  brew install mysql node ack wget tree
 }
 
 ###############################################################################
