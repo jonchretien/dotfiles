@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+.vim#!/usr/bin/env bash
 
 ###############################################################################
 # Variables
@@ -19,7 +20,7 @@ create_backup_dir() {
 
 install_dotfiles() {
   echo "Archiving old dotfiles and creating symlinks for new ones."
-  files=( ".aliases" ".bash_profile" ".bash_prompt" ".bashrc" ".editorconfig" ".exports" ".functions" ".gitconfig" ".gitignore" ".gvimrc" ".vimrc" ".vimr" )
+  files=( ".aliases" ".bash_profile" ".bash_prompt" ".bashrc" ".editorconfig" ".exports" ".functions" ".gitconfig" ".gitignore" ".gvimrc" ".vimrc" ".vimr" ".vim" )
 
   for file in "${files[@]}"
   do
