@@ -71,3 +71,7 @@ alias server='python -m SimpleHTTPServer';
 # VirtualBox
 alias vboxstart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart';
 alias vboxstop='sudo /Library/StartupItems/VirtualBox/VirtualBox stop';
+
+# Convert video to animated Gifs
+# Example: vid2gif src.mp4 "00:00:00" "00:00:10" out.gif
+function vid2gif() { ffmpeg -i "$1" -ss $2 -t $3 -pix_fmt rgb24 -r 10 -s 720x480 "$4"  ;}
