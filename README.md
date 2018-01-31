@@ -16,12 +16,6 @@ Homebase for my dev settings.
 ```bash
 git clone https://github.com/jonchretien/dotfiles.git && cd dotfiles && ./bootstrap.sh
 ```
-### Step 3: apply themes and misc. settings
-
-* [Emmet](http://emmet.io/download/)
-* [Package Control](http://wbond.net/sublime_packages/package_control/installation)
-* [Soda Sublime Theme](https://github.com/buymeasoda/soda-theme/)
-* [Solarized Limechat Theme](https://github.com/paulcpederson/solarized-limechat)
 
 ### Step 3: local/private Bash
 
@@ -57,4 +51,8 @@ your dotfiles repository.
 
 ## Credit
 
-Much of this work is based on dotfiles from [Mathias Bynens](https://github.com/mathiasbynens/dotfiles), [Nicolas Gallagher](https://github.com/necolas/dotfiles), [online resources](http://dotfiles.github.io), and tips from friends and colleagues.
+Much of this work is based on dotfiles from:
+* [GitHub ❤ ~/](http://dotfiles.github.io)
+* [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
+* [Nicolas Gallagher](https://github.com/necolas/dotfiles)
+* tips from friends and colleagues.
