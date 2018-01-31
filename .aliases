@@ -3,11 +3,12 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
 
 # Shortcuts
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
-alias st='cd ~/Sites'
+alias p='cd ~/projects'
 alias h="history"
 alias cl='clear'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
