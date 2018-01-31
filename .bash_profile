@@ -52,3 +52,12 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 export NVM_DIR="/Users/jchretien/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# rbenv
+eval "$(rbenv init -)"
+
+# python 3
+export VIRTUALENV_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=$VIRTUALENV_PYTHON
