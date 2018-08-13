@@ -39,23 +39,39 @@ alias vhosts="mate /etc/apache2/extra/httpd-vhosts.conf"
 # Git
 alias add="git add"
 alias branch="git branch"
-alias clone="git clone"
+alias ca = "git commit --amend --no-edit"
+alias cb = "!f() { git checkout -b jon/$@; }; f"
 alias checkout="git checkout"
+alias clone="git clone"
 alias co="git checkout"
 alias commit="git commit"
 alias diff="git diff"
 alias fetch="git fetch"
+alias graph="git log --graph --all --decorate --stat --date=iso"
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 alias log="git log"
 alias merge="git merge"
+alias overview="git log --all --since='2 weeks' --oneline --no-merges"
+alias praise="git blame"
 alias pull="git pull"
 alias push="git push"
+alias puhs = push
+alias psuh = push
+alias pshu = push
+alias spuh = push
+alias sphu = push
 alias rebase="git rebase"
+alias recap="git log --all --oneline --no-merges"
+alias recent="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+"
 alias remote="git remote"
 alias show="git show"
 alias stash="git stash"
+alias stats="git shortlog -sn --all --no-merges"
 alias status="git status -sb"
 alias tag="git tag"
+alias today="git log --since=00:00:00 --all --no-merges --oneline"
+alias unstage = "git reset HEAD --"
 
 # MySQL
 alias mysql=/usr/local/mysql/bin/mysql
