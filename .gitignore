@@ -1,3 +1,6 @@
+# Files
+.bash_profile.local
+
 # Folder view configuration files
 .DS_Store
 Desktop.ini
