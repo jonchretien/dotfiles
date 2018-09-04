@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 
+# Create a new branch with name prefix
+function cb() {
+	git checkout -b jon/"$@";
+}
+
+function changelog() {
+	git log --oneline --no-merges $1..HEAD;
+}
+
 # Show GIT Branch
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# Install a grunt plugin and save to devDependencies
-function gi() {
-  npm install --save-dev grunt-"$@"
-}
-
-# Install a grunt-contrib plugin and save to devDependencies
-function gci() {
-  npm install --save-dev grunt-contrib-"$@"
+function parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/';
 }
 
 # Create a new directory and enter it

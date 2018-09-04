@@ -40,8 +40,6 @@ alias vhosts="mate /etc/apache2/extra/httpd-vhosts.conf"
 alias add="git add"
 alias branch="git branch"
 alias ca="git commit --amend --no-edit"
-alias cb="!f() { git checkout -b jon/$@; }; f"
-alias changelog="!git log --oneline --no-merges ${1-$(git describe --abbrev=0)}..HEAD"
 alias checkout="git checkout"
 alias clone="git clone"
 alias co="git checkout"
@@ -62,14 +60,14 @@ alias pshu=push
 alias spuh=push
 alias sphu=push
 alias rebase="git rebase"
-alias recap="!git log --all --oneline --no-merges --author=${1-$(git config user.email)}"
+alias recap="git log --all --oneline --no-merges --author=${1-$(git config user.email)}"
 alias remote="git remote"
 alias show="git show"
 alias stash="git stash"
 alias stats="git shortlog -sn --all --no-merges"
 alias status="git status -sb"
 alias tag="git tag"
-alias today="!git log --all --since=00:00:00 --oneline --no-merges --author=${1-$(git config user.email)}"
+alias today="git log --all --since=00:00:00 --oneline --no-merges --author=${1-$(git config user.email)}"
 alias unstage="git reset HEAD --"
 
 # MySQL
