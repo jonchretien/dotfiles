@@ -1,7 +1,7 @@
 [alias]
-        k = log --oneline --graph --decorate
+	k = log --oneline --graph --decorate
 	df = diff --color --color-words --abbrev
-        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [core]
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = /Users/jchretien/.gitignore_global
@@ -22,13 +22,6 @@
 	changed = green
 	untracked = cyan reverse
 	branch = magenta bold
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
 [branch "master"]
 	remote = origin
 	merge = refs/heads/master
