@@ -8,7 +8,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 # Shortcuts
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
-alias p='cd ~/code'
+alias c='cd ~/code'
 alias spt='function _spt(){ cd ~/code/work/"$1"; };_spt'
 alias h="history"
 alias cl='clear'
