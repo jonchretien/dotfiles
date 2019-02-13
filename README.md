@@ -1,4 +1,4 @@
-# Jon’s dotfiles
+# 🤖 dotfiles (Jon Chretien)
 
 Homebase for my dev settings.
 
