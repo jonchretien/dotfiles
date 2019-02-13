@@ -11,10 +11,8 @@ Homebase for my dev settings.
 
 ### Step 2: clone and install dotfiles
 
-*Work in progress.*
-
 ```bash
-git clone https://github.com/jonchretien/dotfiles.git && cd dotfiles && ./bootstrap.sh
+git clone https://github.com/jonchretien/dotfiles.git && cd dotfiles && source bootstrap.sh
 ```
 
 ### Step 3: local/private Bash
