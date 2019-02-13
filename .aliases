@@ -6,12 +6,13 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 
 # Shortcuts
+alias c='cd ~/code'
+alias cl='clear'
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
-alias c='cd ~/code'
-alias spt='function _spt(){ cd ~/code/work/"$1"; };_spt'
+alias dot="cd ~/dotfiles"
 alias h="history"
-alias cl='clear'
+alias spt='function _spt(){ cd ~/code/work/"$1"; };_spt'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 # Detect which `ls` flavor is in use
