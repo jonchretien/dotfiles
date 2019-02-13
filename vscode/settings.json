@@ -1,0 +1,43 @@
+// Place your settings in this file to overwrite the default settings
+{
+	// Controls the font size in pixels.
+	"editor.fontSize": 24,
+	// save files when editor loses focus
+	"files.autoSave": "onFocusChange",
+	// Controls the font family.
+	"editor.fontFamily": "Operator Mono",
+	// Configure glob patterns for excluding files and folders.
+	"files.exclude": {
+		"node_modules": true,
+		"bower_components": true
+	},
+	"editor.formatOnPaste": false,
+	"editor.minimap.enabled": false,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.snippetSuggestions": "top",
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"emmet.triggerExpansionOnTab": true,
+	"prettier.singleQuote": true,
+	"prettier.trailingComma": "es5",
+	"search.location": "panel",
+	"showOutput": "never",
+	"sublimeTextKeymap.promptV3Features": true,
+	"telemetry.enableCrashReporter": false,
+	"telemetry.enableTelemetry": false,
+	"window.zoomLevel": 1,
+	"workbench.activityBar.visible": true,
+	"workbench.colorTheme": "Material Theme",
+	"workbench.iconTheme": "eq-material-theme-icons",
+	"workbench.startupEditor": "newUntitledFile",
+	"[html]": {
+		"editor.formatOnSave": true
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true
+	},
+	"[mustache]": {
+		"editor.formatOnSave": true
+	},
+}
