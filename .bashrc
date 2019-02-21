@@ -5,9 +5,9 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# Update master branch
+# Checkout and update master branch
 function upm {
-    remote prune origin && fetch -p && pull origin master && yarn install
+    checkout master && remote prune origin && fetch -p && pull origin master && yarn install
 }
 
 # Update current working branch
