@@ -28,7 +28,13 @@
 	rebase = true
 [help]
 	autocorrect = 1
-[includeIf "gitdir:~/code/personal/"]
-	path = .gitconfig-personal
+[includeIf "gitdir:~/code/forks/"]
+	path = .gitconfig-forks
+[includeIf "gitdir:~/code/oss/"]
+	path = .gitconfig-oss
+[includeIf "gitdir:~/code/private/"]
+	path = .gitconfig-private
+[includeIf "gitdir:~/code/todo/"]
+	path = .gitconfig-todo
 [includeIf "gitdir:~/code/work/"]
 	path = .gitconfig-work
