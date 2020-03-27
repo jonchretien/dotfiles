@@ -15,7 +15,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Checkout and update master branch
 function upm {
-    git checkout master && git remote prune origin && git fetch -p && git pull origin master && yarn install && delete-merged-branches
+    git checkout master && git remote prune origin && git fetch -p && git pull origin master && yarn install && git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
 }
 
 ## Update current working branch
@@ -33,13 +33,6 @@ function cb() {
 function vid2gif() {
 	ffmpeg -i "$1" -ss $2 -t $3 -pix_fmt rgb24 -r 10 -s 720x480 "$4"  ;
 }
-
-
-# ==========================
-# Plugins
-# ==========================
-
-# plugins=(colorize git node osx python javascript zsh_reload zsh-syntax-highlighting)
 
 
 # ==========================
@@ -98,8 +91,6 @@ alias today="git log --all --since=00:00:00 --oneline --no-merges --author=${1-$
 alias unstage="git reset HEAD --"
 alias pr='!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f'
 alias pr-clean='!git checkout master ; git for-each-ref refs/heads/pr/* --format="%(refname)" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done'
-alias delete-merged-branches="!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
-
 
 # MySQL
 alias mysql=/usr/local/mysql/bin/mysql
