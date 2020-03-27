@@ -4,52 +4,48 @@ Homebase for my dev settings.
 
 ## Installation
 
-### Step 1: prepare Mac OS X
+### 1: prepare Mac OS X
 
 Run through the steps in the [setup repo](https://github.com/jonchretien/setup).
 
-### Step 2: clone and install dotfiles
+### 2: Install [Oh My ZSH](https://ohmyz.sh)
 
-```bash
+```zsh
+$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Set up plugins:
+
+```zsh
+plugins=(git node npm nvm osx python zsh_reload)
+```
+
+Set up theme (agnoster):
+
+- https://github.com/agnoster/agnoster-zsh-theme
+- https://github.com/powerline/fonts
+- https://github.com/powerline/fonts/issues/44
+
+### 3: clone and install dotfiles
+
+```zsh
 git clone https://github.com/jonchretien/dotfiles.git && cd dotfiles && source bootstrap.sh
 ```
 
-### Step 3: local/private Bash
+### 4: Custom ZSH Settings
 
-Any private and custom Bash commands and configuration should be placed in a
-`~/.bash_profile.local` file. This file will not be under version control or
-committed to a public repository. If `~/.bash_profile.local` exists, it will be
-sourced for inclusion in `bash_profile`.
+- Update the custom folder directory in `.zshrc` to point to `ZSH_CUSTOM=$HOME/dotfiles/`.
+- Disable git's [`autocorrect`](https://stackoverflow.com/questions/39708972/how-do-i-turn-off-git-autocorrect).
 
-First create `~/.bash_profile.local`:
+### 5: Custom Terminal login
 
-```bash
-$ touch ~/.bash_profile.local
-$ vim ~/.bash_profile.local
-```
-Here is an example:
-
-```bash
-# Git credentials
-# Not under version control to prevent people from
-# accidentally committing with your details
-GIT_AUTHOR_NAME="Jon C."
-GIT_AUTHOR_EMAIL="jon@example.com"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-# Set the credentials (modifies ~/.gitconfig)
-git config --global user.name "$GIT_AUTHOR_NAME"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
-```
-
-N.B. Because the `git/gitconfig` file is copied to `~/.gitconfig`, any private
-git configuration specified in `~/.bash_profile.local` will not be committed to
-your dotfiles repository.
+[Message of the Day](https://sixcolors.com/post/2020/03/quick-tip-customize-your-terminal-login-with-a-message-of-the-day/)
 
 ## Credit
 
 Much of this work is based on dotfiles from:
-* [GitHub ❤ ~/](http://dotfiles.github.io)
-* [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
-* [Nicolas Gallagher](https://github.com/necolas/dotfiles)
-* tips from friends and colleagues.
+
+- [GitHub ❤ ~/](http://dotfiles.github.io)
+- [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
+- [Nicolas Gallagher](https://github.com/necolas/dotfiles)
+- tips from friends and colleagues.

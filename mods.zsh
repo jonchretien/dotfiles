@@ -1,26 +1,59 @@
-# Easier navigation: .., ..., ...., and .....
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
+#!/bin/sh
+
+# ==========================
+# Tools
+# ==========================
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+# ==========================
+# Functions
+# ==========================
+
+# Checkout and update master branch
+function upm {
+    git checkout master && git remote prune origin && git fetch -p && git pull origin master && yarn install
+}
+
+## Update current working branch
+function upb {
+    git pull -r origin master && yarn install
+}
+
+# Create a new branch with name prefix
+function cb() {
+	git checkout -b jon/"$@";
+}
+
+# Convert video to animated Gifs
+# Example: vid2gif src.mp4 "00:00:00" "00:00:10" out.gif
+function vid2gif() {
+	ffmpeg -i "$1" -ss $2 -t $3 -pix_fmt rgb24 -r 10 -s 720x480 "$4"  ;
+}
+
+
+# ==========================
+# Plugins
+# ==========================
+
+# plugins=(colorize git node osx python javascript zsh_reload zsh-syntax-highlighting)
+
+
+# ==========================
+# Aliases
+# ==========================
 
 # Shortcuts
 alias c='cd ~/code'
-alias cl='clear'
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias dot="cd ~/dotfiles"
 alias h="history"
-alias spt='function _spt(){ cd ~/code/work/"$1"; };_spt'
+alias work='function _work(){ cd ~/code/work/"$1"; };_work'
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-  colorflag="--color"
-else # OS X `ls`
-  colorflag="-G"
-fi
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
@@ -29,13 +62,6 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# Apache
-alias config="mate /etc/apache2/httpd.conf"
-alias webstart="sudo apachectl start"
-alias webstop="sudo apachectl stop"
-alias webrestart="sudo apachectl restart"
-alias vhosts="mate /etc/apache2/extra/httpd-vhosts.conf"
 
 # Git
 alias add="git add"
@@ -70,6 +96,8 @@ alias status="git status -sb"
 alias tag="git tag"
 alias today="git log --all --since=00:00:00 --oneline --no-merges --author=${1-$(git config user.email)}"
 alias unstage="git reset HEAD --"
+alias pr='!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f'
+alias pr-clean='!git checkout master ; git for-each-ref refs/heads/pr/* --format="%(refname)" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done'
 
 # MySQL
 alias mysql=/usr/local/mysql/bin/mysql
@@ -88,6 +116,5 @@ alias server='python -m SimpleHTTPServer';
 alias vboxstart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart';
 alias vboxstop='sudo /Library/StartupItems/VirtualBox/VirtualBox stop';
 
-# Convert video to animated Gifs
-# Example: vid2gif src.mp4 "00:00:00" "00:00:10" out.gif
-function vid2gif() { ffmpeg -i "$1" -ss $2 -t $3 -pix_fmt rgb24 -r 10 -s 720x480 "$4"  ;}
+# Misc.
+alias today="curl wttr.in"
