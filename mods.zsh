@@ -10,39 +10,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 
 # ==========================
-# Functions
-# ==========================
-
-# Checkout and update master branch
-function upm {
-    git checkout master && git remote prune origin && git fetch -p && git pull origin master && yarn install && delete-merged-branches
-}
-
-## Update current working branch
-function upb {
-    git pull -r origin master && yarn install
-}
-
-# Create a new branch with name prefix
-function cb() {
-	git checkout -b jon/"$@";
-}
-
-# Convert video to animated Gifs
-# Example: vid2gif src.mp4 "00:00:00" "00:00:10" out.gif
-function vid2gif() {
-	ffmpeg -i "$1" -ss $2 -t $3 -pix_fmt rgb24 -r 10 -s 720x480 "$4"  ;
-}
-
-
-# ==========================
-# Plugins
-# ==========================
-
-# plugins=(colorize git node osx python javascript zsh_reload zsh-syntax-highlighting)
-
-
-# ==========================
 # Aliases
 # ==========================
 
@@ -120,3 +87,29 @@ alias vboxstop='sudo /Library/StartupItems/VirtualBox/VirtualBox stop';
 
 # Misc.
 alias today="curl wttr.in"
+
+
+# ==========================
+# Functions
+# ==========================
+
+# Checkout and update master branch
+function upm {
+    git checkout master && git remote prune origin && git fetch -p && git pull origin master && yarn install && delete-merged-branches
+}
+
+## Update current working branch
+function upb {
+    git pull -r origin master && yarn install
+}
+
+# Create a new branch with name prefix
+function cb() {
+	git checkout -b jon/"$@";
+}
+
+# Convert video to animated Gifs
+# Example: vid2gif src.mp4 "00:00:00" "00:00:10" out.gif
+function vid2gif() {
+	ffmpeg -i "$1" -ss $2 -t $3 -pix_fmt rgb24 -r 10 -s 720x480 "$4"  ;
+}
