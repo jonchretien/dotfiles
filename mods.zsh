@@ -15,7 +15,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Checkout and update master branch
 function upm {
-    git checkout master && git remote prune origin && git fetch -p && git pull origin master && yarn install && git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+    git checkout master && git remote prune origin && git fetch -p && git pull origin master && yarn install
 }
 
 ## Update current working branch
