@@ -81,6 +81,7 @@ alias spuh=push
 alias sphu=push
 alias rebase="git rebase"
 alias recap="git log --all --oneline --no-merges --author=${1-$(git config user.email)}"
+alias recent="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)""
 alias remote="git remote"
 alias show="git show"
 alias stash="git stash"
