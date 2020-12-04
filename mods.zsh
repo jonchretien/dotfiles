@@ -66,11 +66,8 @@ alias co="git checkout"
 alias commit="git commit"
 alias diff="git diff"
 alias fetch="git fetch"
-alias graph="git log --graph --all --decorate --stat --date=iso"
-alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 alias log="git log"
 alias merge="git merge"
-alias overview="git log --all --since='2 weeks' --oneline --no-merges"
 alias praise="git blame"
 alias pull="git pull"
 alias push="git push"
@@ -80,18 +77,23 @@ alias pshu=push
 alias spuh=push
 alias sphu=push
 alias rebase="git rebase"
-alias recap="git log --all --oneline --no-merges --author=${1-$(git config user.email)}"
-alias recent="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)""
 alias remote="git remote"
 alias show="git show"
 alias stash="git stash"
-alias stats="git shortlog -sn --all --no-merges"
 alias status="git status -sb"
 alias tag="git tag"
-alias today="git log --all --since=00:00:00 --oneline --no-merges --author=${1-$(git config user.email)}"
 alias unstage="git reset HEAD --"
 alias pr='!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f'
 alias pr-clean='!git checkout master ; git for-each-ref refs/heads/pr/* --format="%(refname)" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done'
+
+# Branch Stats
+alias graph="git log --graph --all --decorate --stat --date=iso"
+alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
+alias overview="git log --all --since='2 weeks' --oneline --no-merges"
+alias recap="git log --all --oneline --no-merges --author=${1-$(git config user.email)}"
+alias recent='git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
+alias stats="git shortlog -sn --all --no-merges"
+alias today="git log --all --since=00:00:00 --oneline --no-merges --author=${1-$(git config user.email)}"
 
 # MySQL
 alias mysql=/usr/local/mysql/bin/mysql
